@@ -3,380 +3,553 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b0c12">
-<title>حساباتي الرسمية</title>
+<meta name="theme-color" content="#190e20">
+<title>عيد ميلاد مشكاة 💗</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  color-scheme: dark;
-  --bg: #0b0c12;
-  --text: #ffffff;
-  --muted: #a5a6b5;
-  --glass: rgba(255,255,255,.075);
-  --border: rgba(255,255,255,.13);
-  --accent: #a78bfa;
-  --shadow: rgba(0,0,0,.25);
-  --glow1: rgba(125,90,220,.20);
-  --glow2: rgba(40,130,190,.17);
+  --pink:#ff9ecb;
+  --purple:#b58bff;
+  --bg:#190e20;
+  --white:#fff7fc;
 }
 
-body.light {
-  color-scheme: light;
-  --bg: #edf0f7;
-  --text: #171824;
-  --muted: #666b7c;
-  --glass: rgba(255,255,255,.60);
-  --border: rgba(255,255,255,.85);
-  --accent: #7054c8;
-  --shadow: rgba(70,70,100,.12);
-  --glow1: rgba(150,120,230,.16);
-  --glow2: rgba(70,160,210,.13);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* {box-sizing:border-box;margin:0;padding:0}
 
 body {
-  min-height: 100vh;
-  font-family: 'Cairo', sans-serif;
-  color: var(--text);
+  min-height:100vh;
+  font-family:'Cairo',sans-serif;
+  color:var(--white);
   background:
-    radial-gradient(circle at 15% 15%, var(--glow1), transparent 35%),
-    radial-gradient(circle at 85% 80%, var(--glow2), transparent 35%),
+    radial-gradient(circle at 20% 20%,#613052 0,transparent 35%),
+    radial-gradient(circle at 80% 75%,#39245c 0,transparent 40%),
     var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 16px 30px;
-  transition: background-color .35s ease, color .35s ease;
+  overflow-x:hidden;
+  text-align:center;
 }
 
-.theme-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--glass);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  color: var(--text);
-  font-size: 23px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 8px 25px var(--shadow);
-  transition: transform .18s ease, background .25s ease;
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.15;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:35px 35px;
 }
 
-.theme-btn:active {
-  transform: scale(.85) rotate(20deg);
+button {font-family:inherit;cursor:pointer}
+
+.stars span {
+  position:fixed;
+  color:#ffe0f0;
+  animation:twinkle 3s infinite alternate;
+  pointer-events:none;
+  z-index:0;
+}
+
+@keyframes twinkle {
+  from {opacity:.2;transform:scale(.7)}
+  to {opacity:1;transform:scale(1.3)}
 }
 
 .container {
-  width: 100%;
-  max-width: 440px;
-  text-align: center;
-  animation: appear .7s ease both;
+  width:min(92%,480px);
+  margin:auto;
+  padding:65px 0 50px;
+  position:relative;
+  z-index:2;
 }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.profile {
-  width: 115px;
-  height: 115px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  padding: 4px;
-  background: var(--glass);
-  box-shadow: 0 10px 35px var(--shadow);
-  margin-bottom: 15px;
+.small-title {
+  color:var(--pink);
+  letter-spacing:3px;
+  font-size:12px;
+  margin-bottom:15px;
 }
 
 h1 {
-  font-size: 27px;
-  font-weight: 800;
+  font-size:clamp(35px,9vw,52px);
+  font-weight:800;
+  background:linear-gradient(120deg,#fff,#ffacd2,#d7b5ff);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 30px #ff9ecb22;
 }
 
-.subtitle {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 3px;
-  margin-bottom: 27px;
+.intro {
+  color:#e6cbdc;
+  font-size:14px;
+  margin-top:12px;
+  line-height:2;
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
+.date {
+  display:inline-block;
+  margin:20px auto 35px;
+  padding:8px 22px;
+  border:1px solid #ffffff30;
+  background:#ffffff0c;
+  border-radius:30px;
+  color:#ffc2df;
+  font-size:13px;
+  backdrop-filter:blur(10px);
 }
 
-.social {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 13px 17px;
-  min-height: 68px;
-  text-decoration: none;
-  color: var(--text);
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 19px;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  box-shadow: 0 8px 25px var(--shadow);
-  transition: transform .22s ease, background .22s ease, border-color .22s ease;
-  position: relative;
-  overflow: hidden;
+.section-title {
+  font-size:18px;
+  margin-bottom:23px;
+  color:#ffe1ef;
 }
 
-.social:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
+/* Envelope */
+
+.envelope-area {
+  margin:20px auto 55px;
+  perspective:900px;
 }
 
-.social:active {
-  transform: scale(.96);
-  background: var(--border);
+.envelope {
+  width:240px;
+  height:155px;
+  margin:auto;
+  position:relative;
+  cursor:pointer;
+  filter:drop-shadow(0 15px 25px #0006);
+  transition:transform .3s;
 }
 
-.social-icon {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 13px;
-  background: rgba(128,128,128,.12);
-  flex-shrink: 0;
+.envelope:hover {transform:translateY(-5px)}
+
+.env-body {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(140deg,#f5a4c9,#bd78b7);
+  border-radius:8px;
+  overflow:hidden;
 }
 
-.social-icon svg {
-  width: 23px;
-  height: 23px;
-  fill: currentColor;
+.env-body::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(140deg,transparent 49%,#d77cae 50%);
+  clip-path:polygon(0 0,50% 60%,100% 0);
+  z-index:3;
 }
 
-.social-info {
-  text-align: right;
-  flex: 1;
+.env-body::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(40deg,#d17eac 50%,transparent 51%);
+  clip-path:polygon(0 100%,50% 45%,100% 100%);
+  z-index:4;
 }
 
-.social-info strong {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
+.env-flap {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:90px;
+  background:#f9bddb;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:transform .8s;
+  z-index:5;
 }
 
-.social-info span {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-  direction: ltr;
-  text-align: right;
+.letter {
+  position:absolute;
+  width:85%;
+  height:120px;
+  background:#fff8fc;
+  color:#7b4265;
+  left:7.5%;
+  top:15px;
+  border-radius:8px;
+  padding:14px 8px;
+  font-size:12px;
+  transition:transform 1s;
+  z-index:2;
 }
 
-.arrow {
-  font-size: 19px;
-  color: var(--muted);
-  transition: transform .2s;
+.seal {
+  position:absolute;
+  top:58px;
+  left:calc(50% - 18px);
+  width:36px;
+  height:36px;
+  background:#a34e82;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  z-index:6;
+  font-size:18px;
+  transition:opacity .4s;
 }
 
-.social:hover .arrow {
-  transform: translateX(-4px);
-  color: var(--accent);
+.envelope.open .env-flap {
+  transform:rotateX(180deg);
+  z-index:1;
 }
 
-.instagram .social-icon { color: #e879b0; }
-.facebook .social-icon { color: #5297ff; }
-.snapchat .social-icon { color: #c7ad00; }
-.tiktok .social-icon { color: #36bfb0; }
-.whatsapp .social-icon { color: #25d366; }
+.envelope.open .letter {
+  transform:translateY(-95px);
+}
+
+.envelope.open .seal {opacity:0}
+
+.envelope-hint {
+  color:#d9b8d0;
+  font-size:12px;
+  margin-top:22px;
+}
+
+/* Message */
+
+.message {
+  display:none;
+  background:#ffffff0c;
+  border:1px solid #ffffff25;
+  backdrop-filter:blur(15px);
+  border-radius:22px;
+  padding:25px 20px;
+  margin:20px auto 45px;
+  animation:fadeUp 1s both;
+  line-height:2.2;
+}
+
+.message.show {display:block}
+
+.message h2 {
+  color:#ffadd2;
+  font-size:23px;
+  margin-bottom:12px;
+}
+
+.message p {font-size:14px;color:#f4dce9}
+
+/* Gift */
+
+.gift-section {margin-top:45px}
+
+.gift {
+  width:150px;
+  height:130px;
+  position:relative;
+  margin:55px auto 15px;
+  cursor:pointer;
+  transition:transform .3s;
+  filter:drop-shadow(0 12px 20px #0005);
+}
+
+.gift:hover {transform:scale(1.07)}
+
+.gift-box {
+  position:absolute;
+  bottom:0;
+  width:150px;
+  height:95px;
+  background:linear-gradient(120deg,#ed7eaa,#b957a0);
+  border-radius:8px;
+  z-index:2;
+}
+
+.gift-box::before {
+  content:"";
+  position:absolute;
+  height:100%;
+  width:24px;
+  background:#ffe2a6;
+  left:63px;
+}
+
+.gift-lid {
+  position:absolute;
+  top:20px;
+  left:-8px;
+  width:166px;
+  height:28px;
+  border-radius:6px;
+  background:linear-gradient(120deg,#ffb4d1,#db77ac);
+  z-index:4;
+  transition:transform 1s,top 1s;
+}
+
+.ribbon {
+  position:absolute;
+  width:24px;
+  height:35px;
+  border:7px solid #ffe2a6;
+  border-radius:50% 50% 0 50%;
+  top:-13px;
+  left:47px;
+  transform:rotate(-25deg);
+}
+
+.ribbon.two {
+  left:75px;
+  transform:rotate(115deg);
+}
+
+.gift.open .gift-lid {
+  transform:translate(20px,-90px) rotate(-25deg);
+}
+
+.gift-hint {
+  color:#d9b8d0;
+  font-size:12px;
+  margin-top:24px;
+}
+
+/* Butterflies */
+
+.butterfly {
+  position:fixed;
+  z-index:10;
+  bottom:10%;
+  left:50%;
+  font-size:30px;
+  pointer-events:none;
+  animation:fly 5s ease-out forwards;
+  filter:drop-shadow(0 0 10px #ffa6d5);
+}
+
+@keyframes fly {
+  0% {transform:translate(0,0) rotate(0) scale(.3);opacity:0}
+  15% {opacity:1}
+  50% {transform:translate(var(--x),-50vh) rotate(25deg) scale(1.2)}
+  100% {transform:translate(calc(var(--x)*1.5),-110vh) rotate(-30deg) scale(.7);opacity:0}
+}
+
+/* Confetti */
+
+.confetti {
+  position:fixed;
+  top:-20px;
+  z-index:20;
+  pointer-events:none;
+  animation:fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {transform:translateY(110vh) rotate(900deg);opacity:0}
+}
+
+.btn {
+  border:1px solid #ffffff30;
+  background:linear-gradient(120deg,#e88bb8,#a879c9);
+  color:white;
+  border-radius:30px;
+  padding:12px 28px;
+  font-size:13px;
+  box-shadow:0 8px 25px #c45a9d35;
+}
 
 .footer {
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 25px;
+  color:#bca3b8;
+  font-size:11px;
+  margin-top:60px;
 }
 
-@media (max-width: 380px) {
-  h1 { font-size: 23px; }
-  .social { padding: 11px 13px; }
+.heart {
+  color:#ff91c4;
+  animation:heartbeat 1s infinite;
+  display:inline-block;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
+@keyframes heartbeat {
+  50% {transform:scale(1.3)}
 }
+
+@keyframes fadeUp {
+  from {opacity:0;transform:translateY(20px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
 </style>
 </head>
 
 <body>
 
-<button class="theme-btn" id="themeBtn" type="button"
-        aria-label="التبديل إلى الوضع النهاري"
-        aria-pressed="false"
-        title="تغيير الوضع">
-  ☀️
-</button>
+<div class="stars" id="stars"></div>
 
 <main class="container">
 
-  <img class="profile" src="alk.png"
-       alt="الصورة الشخصية"
-       onerror="this.style.display='none'">
+  <div class="small-title">A SPECIAL DAY FOR SOMEONE SPECIAL</div>
 
-  <h1>حساباتي الرسمية</h1>
-  <p class="subtitle">مرحباً بك في مساحتي الرقمية</p>
+  <h1>مشكاة 💗</h1>
 
-  <section class="links">
+  <p class="intro">
+    في يوم زي دا، الدنيا بقت أجمل بميلادكِ...
+    واليوم الحكاية كلها عنكِ.
+  </p>
 
-    <!-- Instagram -->
-    <a class="social instagram"
-       href="https://www.instagram.com/vr_v123?cplk=dng4dHFrZHBxMDhu"
-       target="_blank" rel="noopener noreferrer">
-      <div class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
-        </svg>
-      </div>
-      <div class="social-info">
-        <strong>Instagram</strong>
-        <span>@vr_v123</span>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+  <div class="date">03 NOVEMBER · عيد ميلاد سعيد</div>
 
-    <!-- Facebook -->
-    <a class="social facebook"
-       href="https://www.facebook.com/mralsmanyhsnahmd"
-       target="_blank" rel="noopener noreferrer">
-      <div class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M13.5 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.8 1.8-1.8H17V2.3c-.3 0-1.5-.2-2.8-.2-2.8 0-4.7 1.7-4.7 4.9v2.5H6.5V13h3v9h4z"/>
-        </svg>
-      </div>
-      <div class="social-info">
-        <strong>Facebook</strong>
-        <span>صفحتي على فيسبوك</span>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+  <h2 class="section-title">💌 عندك رسالة صغيرة</h2>
 
-    <!-- Snapchat -->
-    <a class="social snapchat"
-       href="https://www.snapchat.com/add/o_alkondi?share_id=z9Ir7_C7usw&locale=ar-SD"
-       target="_blank" rel="noopener noreferrer">
-      <div class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2c-3.1 0-4.8 2.3-4.8 5.4 0 1 .2 2.1.2 3.1 0 .7-.4 1.2-1.3 1.6-.6.3-1.2.4-1.8.5-.5.1-.7.5-.4.9.3.5 1 .7 1.7.8.5.1.8.3.8.6 0 .5-.5 1.1-1.5 1.6-.8.4-1.5.6-1.5 1.1 0 .6 1.2.9 2.3 1.1.5.1.8.4 1 .9.1.4.5.6 1 .6.6 0 1.4-.3 2.4-.3.8 0 1.4.2 1.9.5.5.3 1.1.5 1.9.5s1.4-.2 1.9-.5c.5-.3 1.1-.5 1.9-.5 1 0 1.8.3 2.4.3.5 0 .9-.2 1-.6.2-.5.5-.8 1-.9 1.1-.2 2.3-.5 2.3-1.1 0-.5-.7-.7-1.5-1.1-1-.5-1.5-1.1-1.5-1.6 0-.3.3-.5.8-.6.7-.1 1.4-.3 1.7-.8.3-.4.1-.8-.4-.9-.6-.1-1.2-.2-1.8-.5-.9-.4-1.3-.9-1.3-1.6 0-1 .2-2.1.2-3.1C16.8 4.3 15.1 2 12 2z"/>
-        </svg>
+  <div class="envelope-area">
+    <div class="envelope" id="envelope" onclick="openLetter()">
+      <div class="letter">
+        <strong>إلى مشكاة الجميلة 💗</strong>
+        <br>
+        في كلام كتير مستنيكِ...
+        <br>
+        افتحي الرسالة.
       </div>
-      <div class="social-info">
-        <strong>Snapchat</strong>
-        <span>@o_alkondi</span>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+      <div class="env-body"></div>
+      <div class="env-flap"></div>
+      <div class="seal">♥</div>
+    </div>
+    <p class="envelope-hint">اضغطي على الظرف عشان تفتحي رسالتكِ</p>
+  </div>
 
-    <!-- TikTok -->
-    <a class="social tiktok"
-       href="https://www.tiktok.com/@kvndi.11?_r=1&_t=ZG-9B6Fy1Ewteb"
-       target="_blank" rel="noopener noreferrer">
-      <div class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M19.6 7.2a6.5 6.5 0 0 1-4-1.4v8.1a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1v3.4a2.8 2.8 0 1 0 1.7 2.6V2h3.3c.3 2 1.8 3.6 3.9 3.9v1.3z"/>
-        </svg>
-      </div>
-      <div class="social-info">
-        <strong>TikTok</strong>
-        <span>@kvndi.11</span>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+  <div class="message" id="message">
+    <h2>كل سنة وإنتِ طيبة يا مشكاة 🎂</h2>
+    <p>
+      اليوم ما يوم عادي، اليوم ذكرى ميلاد إنسانة مميزة.
+      <br>
+      أتمنى ليكِ سنة مليانة فرح وراحة بال،
+      وأيام تشبه جمال قلبكِ.
+      <br>
+      ربنا يحقق ليكِ كل الأمنيات،
+      ويكتب ليكِ الضحكة البتطلع من القلب،
+      والنجاحات البتخليكِ فخورة بنفسكِ.
+      <br>
+      أتمنى تكون بدايتكِ الجديدة أجمل من كل البدايات،
+      وتكون أيامكِ مليانة حب ونور وسعادة.
+      <br><br>
+      **عيد ميلاد سعيد يا مشكاة**
+      <br>
+      تستاهلي كل الحاجات الحلوة في الدنيا. 💗
+    </p>
+  </div>
 
-    <!-- WhatsApp -->
-    <a class="social whatsapp"
-       href="https://wa.me/+249907532997"
-       target="_blank" rel="noopener noreferrer">
-      <div class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 0 1 0 16c-1.4 0-2.8-.4-4-1.1l-.4-.2-2.7.7.7-2.6-.3-.5A8 8 0 0 1 12 4zm-3.3 3c-.3 0-.6.1-.9.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 4 .6.3 1.1.4 1.5.5.6.2 1.1.1 1.5.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.4l-1.7-.8c-.2-.1-.4-.1-.5.1-.2.3-.6.8-.8 1-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.8c-.2-.4-.4-.5-.7-.5z"/>
-        </svg>
-      </div>
-      <div class="social-info">
-        <strong>WhatsApp</strong>
-        <span>تواصل معي مباشرة</span>
-      </div>
-      <span class="arrow">←</span>
-    </a>
+  <div class="gift-section">
+    <h2 class="section-title">🎁 وفي هدية مستنياكِ!</h2>
 
-  </section>
+    <div class="gift" id="gift" onclick="openGift()">
+      <div class="gift-lid">
+        <div class="ribbon"></div>
+        <div class="ribbon two"></div>
+      </div>
+      <div class="gift-box"></div>
+    </div>
+
+    <p class="gift-hint" id="giftHint">
+      اضغطي على صندوق الهدية واكتشفي المفاجأة
+    </p>
+  </div>
+
+  <div style="margin-top:35px">
+    <button class="btn" onclick="celebrate()">
+      احتفلي بيومكِ ✨
+    </button>
+  </div>
 
   <footer class="footer">
-    © 2026 · جميع الحقوق محفوظة
+    صُنعت هذه المساحة الصغيرة بكل الحب لمشكاة
+    <br><br>
+    © 03 November <span class="heart">♥</span>
   </footer>
 
 </main>
 
 <script>
-(function () {
-  const button = document.getElementById('themeBtn');
-  const metaTheme = document.querySelector('meta[name="theme-color"]');
 
-  let savedTheme = 'dark';
+// نجوم الخلفية
+const stars = document.getElementById('stars');
 
-  try {
-    const stored = localStorage.getItem('profile-theme');
-    if (stored === 'light' || stored === 'dark') {
-      savedTheme = stored;
+for(let i=0;i<35;i++){
+  const s=document.createElement('span');
+  s.textContent='✦';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.fontSize=(8+Math.random()*13)+'px';
+  s.style.animationDelay=Math.random()*3+'s';
+  stars.appendChild(s);
+}
+
+// فتح الظرف
+let letterOpened=false;
+
+function openLetter(){
+  if(letterOpened)return;
+  letterOpened=true;
+
+  document.getElementById('envelope').classList.add('open');
+
+  setTimeout(()=>{
+    document.getElementById('message').classList.add('show');
+    document.getElementById('message').scrollIntoView({
+      behavior:'smooth',block:'center'
+    });
+    confetti(35);
+  },700);
+}
+
+// فتح الهدية والفراشات
+let giftOpened=false;
+
+function openGift(){
+  if(giftOpened)return;
+  giftOpened=true;
+
+  document.getElementById('gift').classList.add('open');
+  document.getElementById('giftHint').textContent=
+    'مفاجأة صغيرة ليكِ... خلي الفراشات تطير! 🦋';
+
+  setTimeout(()=>{
+    for(let i=0;i<24;i++){
+      setTimeout(createButterfly,i*160);
     }
-  } catch (error) {}
+    confetti(80);
+  },500);
+}
 
-  function applyTheme(theme) {
-    const light = theme === 'light';
+function createButterfly(){
+  const b=document.createElement('div');
+  b.className='butterfly';
+  b.textContent=['🦋','🦋','🦋','💗'][Math.floor(Math.random()*4)];
+  b.style.left=(15+Math.random()*70)+'%';
+  b.style.setProperty('--x',(Math.random()*300-150)+'px');
+  b.style.animationDuration=(4+Math.random()*3)+'s';
+  document.body.appendChild(b);
 
-    document.body.classList.toggle('light', light);
-    button.textContent = light ? '🌙' : '☀️';
-    button.setAttribute('aria-pressed', String(light));
-    button.setAttribute(
-      'aria-label',
-      light ? 'التبديل إلى الوضع الليلي' : 'التبديل إلى الوضع النهاري'
-    );
+  setTimeout(()=>b.remove(),7500);
+}
 
-    metaTheme.setAttribute(
-      'content',
-      light ? '#edf0f7' : '#0b0c12'
-    );
+// احتفال
+function confetti(count){
+  const colors=['#ff9ecb','#d4a5ff','#fff0a8','#ffffff','#b9e7ff'];
 
-    try {
-      localStorage.setItem('profile-theme', light ? 'light' : 'dark');
-    } catch (error) {}
+  for(let i=0;i<count;i++){
+    const c=document.createElement('div');
+    c.className='confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.width=(5+Math.random()*7)+'px';
+    c.style.height=(8+Math.random()*10)+'px';
+    c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.style.borderRadius='3px';
+    c.style.animationDuration=(3+Math.random()*3)+'s';
+    document.body.appendChild(c);
+
+    setTimeout(()=>c.remove(),6500);
   }
+}
 
-  applyTheme(savedTheme);
+function celebrate(){
+  confetti(100);
+  for(let i=0;i<12;i++){
+    setTimeout(createButterfly,i*200);
+  }
+}
 
-  button.addEventListener('click', function () {
-    const currentlyLight = document.body.classList.contains('light');
-    applyTheme(currentlyLight ? 'dark' : 'light');
-  });
-})();
 </script>
 
 </body>
